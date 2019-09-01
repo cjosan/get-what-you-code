@@ -1,10 +1,10 @@
 package com.cjosan.getwhatyoucode.controller;
 
 import com.cjosan.getwhatyoucode.dto.UserDTO;
-import com.cjosan.getwhatyoucode.dto.request.CreateUserRequestDTO;
-import com.cjosan.getwhatyoucode.dto.request.PasswordResetDTO;
-import com.cjosan.getwhatyoucode.dto.request.ResetPasswordRequestDTO;
-import com.cjosan.getwhatyoucode.dto.request.UpdateUserRequestDTO;
+import com.cjosan.getwhatyoucode.dto.request.users.CreateUserRequestDTO;
+import com.cjosan.getwhatyoucode.dto.request.users.PasswordResetDTO;
+import com.cjosan.getwhatyoucode.dto.request.users.ResetPasswordRequestDTO;
+import com.cjosan.getwhatyoucode.dto.request.users.UpdateUserRequestDTO;
 import com.cjosan.getwhatyoucode.dto.response.UserResponseDTO;
 import com.cjosan.getwhatyoucode.service.UserService;
 import org.springframework.beans.BeanUtils;
@@ -64,10 +64,7 @@ public class UserController {
 	@PutMapping("/{username}")
 	public UserResponseDTO updateUser(@PathVariable(name = "username") String username, @Valid @RequestBody UpdateUserRequestDTO updateUserRequestDTO) {
 		UserResponseDTO userResponse = new UserResponseDTO();
-		UserDTO userDTO = new UserDTO();
-
-		BeanUtils.copyProperties(updateUserRequestDTO, userDTO);
-		UserDTO updatedUser = userService.updateUser(username, userDTO);
+		UserDTO updatedUser = userService.updateUser(username, updateUserRequestDTO);
 		BeanUtils.copyProperties(updatedUser, userResponse);
 
 		return userResponse;

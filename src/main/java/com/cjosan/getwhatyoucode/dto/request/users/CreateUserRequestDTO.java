@@ -1,4 +1,4 @@
-package com.cjosan.getwhatyoucode.dto.request;
+package com.cjosan.getwhatyoucode.dto.request.users;
 
 import javax.validation.constraints.NotBlank;
 

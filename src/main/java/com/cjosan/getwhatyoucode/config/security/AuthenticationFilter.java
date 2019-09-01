@@ -1,6 +1,6 @@
 package com.cjosan.getwhatyoucode.config.security;
 
-import com.cjosan.getwhatyoucode.dto.request.UserLoginDTO;
+import com.cjosan.getwhatyoucode.dto.request.users.UserLoginDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

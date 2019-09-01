@@ -1,8 +1,8 @@
-package com.cjosan.getwhatyoucode.dto.request;
+package com.cjosan.getwhatyoucode.dto.request.users;
 
 import javax.validation.constraints.NotBlank;
 
-public class UpdateUserRequestDTO {
+public class UserRequestDTO {
 
 	@NotBlank(message = "Username cannot be null")
 	private String username;

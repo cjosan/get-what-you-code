@@ -1,6 +1,7 @@
 package com.cjosan.getwhatyoucode.service;
 
 import com.cjosan.getwhatyoucode.dto.UserDTO;
+import com.cjosan.getwhatyoucode.dto.request.users.UpdateUserRequestDTO;
 import com.cjosan.getwhatyoucode.entity.PasswordResetTokenEntity;
 import com.cjosan.getwhatyoucode.entity.UserEntity;
 import com.cjosan.getwhatyoucode.exception.custom.UserAlreadyExistsException;
@@ -99,7 +100,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserDTO updateUser(String username, UserDTO userDetails) {
+	public UserDTO updateUser(String username, UpdateUserRequestDTO userDetails) {
 		UserDTO user = new UserDTO();
 
 		UserEntity userEntity = userRepository.getUserByUsername(username);
